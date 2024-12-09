@@ -29,30 +29,69 @@
 </head>
 
 <body class="bg-background font-waters">
-    <div class="flex flex-row h-20 bg-primaryGreen text-center">
-        <div class="flex items-center basis-1/6 ml-6 ">
+    <div class="flex flex-row h-20 bg-primaryGreen text-center items-center justify-between">
+        <div class="flex items-center min-w-[38%] md:min-w-10 basis-1/6 ml-auto md:ml-7 ">
             <img class="flex" src="Multimedia/logo.png" alt="BlissWay Logo" width="85">
             <img class="flex" src="Multimedia/letras.svg" height="auto" alt="BlissWay title">
         </div>
-        <div class="flex items-center basis-3/6 ">
-            <form class="w-1/2 justify-self-start ">
+        <div class="basis-3/6 ">
+            <form class="w-1/2 hidden md:flex ">
                 <textarea
-                    class="text-xl w-4/5 h-12 px-4 place-content-center rounded-xl border-2 border-black bg-background"
+                    class="text-xl ml-auto xl:ml-auto md:ml-10 w-4/5 h-12 px-4 place-content-center rounded-xl border-2 border-black bg-background"
                     style="resize:none;" name="search" id="search" placeholder="Search"></textarea>
             </form>
         </div>
-        <div class="flex-initial basis-2/6 place-content-center">
-            <h1 class=" text-2xl cursor-pointer">Sign In / Register</h1>
+        <div class="flex basis-2/6">
+            <h1 class="hidden md:flex text-2xl ml-60 cursor-pointer">Sign In / Register</h1>
+            <img class="flex md:hidden ml-7" src="Multimedia/userLogo.png" width="50" alt="BlissWay title">
         </div>
     </div>
-    <nav class="flex space-x-60 h-14 bg-gold text-center place-content-center text-2xl">
-        <h1 class="place-content-center cursor-pointer">SPA</h1>
-        <h1 class="place-content-center cursor-pointer">MASSAGE</h1>
-        <h1 class="place-content-center cursor-pointer">THERMAL WATERS</h1>
-        <h1 class="place-content-center cursor-pointer">EXPERIENCES</h1>
-        <h1 class="place-content-center cursor-pointer">PACKS</h1>
+    <nav class="h-14 bg-gold text-center place-content-center text-2xl flex">
+        <div class="hidden md:flex space-x-36 2xl:space-x-60 flex-wrap">
+            <h1 class="place-content-center cursor-pointer">SPA</h1>
+            <h1 class="place-content-center cursor-pointer">MASSAGE</h1>
+            <h1 class="place-content-center cursor-pointer">THERMAL WATERS</h1>
+            <h1 class="place-content-center cursor-pointer">EXPERIENCES</h1>
+            <h1 class="place-content-center cursor-pointer">PACKS</h1>
+        </div>
+        <div class="items-center flex md:hidden">
+            <form class=" mx-4 flex w-full justify-self-start space-x-8">
+                <textarea
+                    class="flex text-xl w-2/3 h-10 px-4 pt-1 place-content-center rounded-xl border-2 border-black bg-background"
+                    style="resize:none;" name="search" id="search" placeholder="Search"></textarea>
+                <input class="text-xl" type="submit" value="Search" />
+
+            </form>
+        </div>
     </nav>
-    <div>
+    <div class="flex md:hidden justify-center">
+        <div class="grid mx-6 mt-6 grid-rows-[auto,1fr,auto] gap-4">
+            <div
+                class="w-[6rem] h-[6rem] ml-[6rem] border-black border-2 text-center rounded-full bg-gold p-4 flex items-center justify-center">
+                SPA </div>
+            <div class="grid grid-cols-3 gap-4 justify-items-center">
+                <div
+                    class="w-[6rem] h-[6rem] border-black border-2 bg-gold p-4 rounded-full flex items-center justify-center">
+                    MASSAGE </div>
+                <div
+                    class="w-[6rem] h-[6rem] border-black border-2 bg-gold p-4 rounded-full flex items-center justify-center">
+                    THERMAL </div>
+                <div
+                    class="w-[6rem] h-[6rem] border-black border-2 bg-gold p-4 rounded-full flex items-center justify-center">
+                    SURPRISE </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 justify-items-center">
+                <div
+                    class="w-[6rem] h-[6rem] border-black border-2 bg-gold p-4 rounded-full flex items-center justify-center text-xs">
+                    EXPERIENCES </div>
+                <div
+                    class="w-[6rem] h-[6rem] border-black border-2 bg-gold p-4 rounded-full flex items-center justify-center">
+                    PACKS </div>
+            </div>
+        </div>
+    </div>
+
+
 
     </div>
     <footer></footer>
