@@ -17,7 +17,6 @@
                     softGreen: '#A8BCB2',
                     background: '#E3E8E5',
                     gold: '#C8AD8B'
-
                 },
                 fontFamily: {
                     waters: 'Lexend Deca'
@@ -30,12 +29,27 @@
 <body class="bg-background font-waters">
     <div class="h-20 bg-primaryGreen">
     </div>
-    <nav class="h-14 bg-gold ">
+    <nav class="h-14 bg-gold">
     </nav>
-    <div>
-        <div class="box-border h-32 w-32 p-4 border-4 place-items-center">
+    <div class="flex justify-center items-center h-[calc(100vh-8rem)]">
+        <div
+            class="box-border h-[593px] w-[501px] p-8 border-4 border-primaryGreen bg-softGreen flex flex-col justify-between rounded-3xl">
+            <h1 class="text-2xl font-bold text-primaryGreen text-center mb-6">REGISTER</h1>
+            <div class="space-y-4">
+                <input type="text" placeholder="Name" class="w-full h-12 border border-primaryGreen rounded px-4">
+                <input type="text" placeholder="Username" class="w-full h-12 border border-primaryGreen rounded px-4">
+                <input type="email" placeholder="Email" class="w-full h-12 border border-primaryGreen rounded px-4">
+                <input type="password" placeholder="Password"
+                    class="w-full h-12 border border-primaryGreen rounded px-4">
+            </div>
+            <div class="mt-4 text-center">
+                <p class="text-sm text-primaryGreen mb-2">Already have an account?</p>
+                <button
+                    class="w-full h-12 bg-primaryGreen text-white font-bold rounded hover:bg-gold transition">Sign in</button>
+            </div>
+            <button
+                class="w-full h-12 bg-primaryGreen text-white font-bold rounded mt-4 hover:bg-gold transition">Register</button>
         </div>
-        <h1 class="font-waters"> </h1>
     </div>
     <footer></footer>
 </body>
