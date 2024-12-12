@@ -17,11 +17,18 @@
                     softGreen: '#A8BCB2',
                     background: '#E3E8E5',
                     gold: '#C8AD8B'
+
                 },
                 fontFamily: {
                     waters: 'Lexend Deca'
+                },
+                boxShadow: {
+                    form: '11px 10px 3px 11px rgba(0, 0, 0, 0.44)',
+                    formMobile: '11px 10px 3px 1px rgba(0, 0, 0, 0.44)',
+                    image: '3px 7px 4px 3px rgba(0, 0, 0, 0.25);'
                 }
             }
+
         }
     </script>
 </head>
@@ -33,7 +40,7 @@
     </nav>
     <div class="flex justify-center items-center h-[calc(100vh-8rem)]">
         <div
-            class="box-border h-[593px] w-[501px] p-8 border-4 border-primaryGreen bg-softGreen flex flex-col justify-between rounded-3xl">
+            class="box-border shadow-formMobile h-[490px] w-[275px] md:h-[550px] md:w-[500px] md:shadow-form p-8 border-4 border-primaryGreen bg-softGreen flex flex-col justify-between rounded-3xl">
             <h1 class="text-2xl font-bold text-primaryGreen text-center mb-6">REGISTER</h1>
             <div class="space-y-4">
                 <input type="text" placeholder="Name" class="w-full h-12 border border-primaryGreen rounded px-4">
