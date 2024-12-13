@@ -25,6 +25,7 @@
                 },
                 boxShadow: {
                     form: '11px 10px 3px 11px rgba(0, 0, 0, 0.44)',
+                    formMobile: '11px 10px 3px 1px rgba(0, 0, 0, 0.44)',
                     image: '3px 7px 4px 3px rgba(0, 0, 0, 0.25);'
                 }
             }
@@ -54,7 +55,7 @@
         </div>
     </div>
     <nav class="h-14 bg-gold text-center place-content-center text-2xl flex">
-        <div class="hidden md:flex space-x-36 2xl:space-x-60 flex-wrap">
+        <div class="hidden md:flex space-x-32 2xl:space-x-56 flex-wrap">
             <h1 class="place-content-center cursor-pointer">SPA</h1>
             <h1 class="place-content-center cursor-pointer">MASSAGE</h1>
             <h1 class="place-content-center cursor-pointer">THERMAL WATERS</h1>
@@ -90,15 +91,16 @@
             </form>
         </div>
     </nav>
-    <div class="flex">
-        <div class="place-content-center w-[55%] max-w-[55%]">
-            <div class="w-[900px] h-[480px] shadow-image border-black border-[4px] ml-[88px] mt-[65px] bg-contain"
+    <div class="md:flex">
+        <div class="place-content-center justify-items-center md:w-[55%] md:max-w-[55%] my-12 md:my-16">
+            <div class="w-[85%] h-[200px] md:h-[400px] 2xl:h-[480px] shadow-image border-black border-[4px] md:ml-[88px] bg-cover bg-center"
                 style="background-image: url('Multimedia/spa3.png');">
 
             </div>
-            <div class="ml-0 md:ml-40 2xl:ml-24 my-12 2xl:mb-20 md:w-[900px] text-justify">
-                <h1 class="text-center md:text-left text-5xl">Six Harmonies Spa</h1>
-                <p class="my-4 text-md">Step into a world of tranquility and luxury at Six Harmonies Spa, where every
+            <div class="ml-0 md:ml-24 mt-8 md:my-12 2xl:mb-20 w-[80%] md:w-[83%] text-justify">
+                <h1 class="text-center mb-6 md:text-left text-5xl">Six Harmonies Spa</h1>
+                <p class="my-4 text-md">Step into a world of tranquility and luxury at Six Harmonies Spa, where
+                    every
                     visit
                     is an
                     invitation to
@@ -116,9 +118,32 @@
 
 
         </div>
-        <div class="max-w-[45%] w-[45%] my-16 justify-items-center">
-            <div class="border-black border-4 bg-softGreen rounded-xl w-[600px] h-[700px]">
-                <h1>PRICES</h1>
+        <div class="md:max-w-[45%] md:w-[45%] mb-16 md:my-16 justify-items-center">
+            <div
+                class="border-4 bg-softGreen rounded-xl w-[80%] md:w-[70%] h-auto md:h-[700px] shadow-formMobile md:shadow-form">
+                <h1 class="w-full text-center mt-10 text-2xl font-bold md:text-4xl">PRICES</h1>
+                <ul class="m-8 flex flex-col h-[calc(100%-146px)] justify-between">
+                    <li class="p-6 text-2xl md:flex justify-between hover:bg-primaryGreen">
+                        <p class="mb-4 md:mb-0">Aromatherapy Massage</p>
+                        <p class="justify-self-end">80$</p>
+                    </li>
+                    <hr class="border-black border-2 rounded2xl">
+                    <li class="p-6 text-2xl md:flex justify-between hover:bg-primaryGreen">
+                        <p class="mb-4 md:mb-0">Hydrating Facial</p>
+                        <p class="justify-self-end">120$</p>
+                    </li>
+                    <hr class="border-black border-2 rounded2xl">
+                    <li class="p-6 text-2xl md:flex justify-between hover:bg-primaryGreen">
+                        <p class="mb-4 md:mb-0">Hot Stone Therapy</p>
+                        <p class="justify-self-end">90$</p>
+                    </li>
+                    <hr class="border-black border-2 rounded2xl">
+                    <li class="p-6 text-2xl md:flex justify-between hover:bg-primaryGreen">
+                        <p class="mb-4 md:mb-0">Hot Stone Therapy</p>
+                        <p class="justify-self-end">90$</p>
+                    </li>
+
+                </ul>
             </div>
         </div>
     </div>
