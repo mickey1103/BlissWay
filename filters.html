@@ -1,0 +1,282 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="Multimedia/logo.png">
+    <title>BlissWay</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                colors: {
+                    primaryGreen: '#6E907F',
+                    softGreen: '#A8BCB2',
+                    background: '#E3E8E5',
+                    gold: '#C8AD8B'
+
+                },
+                fontFamily: {
+                    waters: 'Lexend Deca'
+                },
+                boxShadow: {
+                    form: '11px 10px 3px 11px rgba(0, 0, 0, 0.44)',
+                    formMobile: '11px 10px 3px 1px rgba(0, 0, 0, 0.44)',
+                    image: '3px 7px 4px 3px rgba(0, 0, 0, 0.25);'
+                }
+            }
+
+        }
+    </script>
+</head>
+
+<body class="w-full bg-background font-waters h-screen relative">
+
+    <div class="fixed top-0 left-0 w-full h-full bg-[black] opacity-50 z-10"></div>
+    <div class="fixed z-20 w-full h-full place-content-center">
+        <div
+            class="justify-self-center w-[80%] md:w-[60%] md:h-[650px]  shadow-image p-8 border-4 border-black bg-softGreen flex flex-col rounded-2xl">
+
+            <div class="mt-12 h-[70%]">
+                <h1 class="text-4xl font-bold md:ml-[80px] ">Filters </h1>
+                <div
+                    class="justify-self-center mt-6 h-[200px] md:h-[80%] w-[95%] md:w-[85%] border border-black rounded-md bg-background  overflow-scroll">
+                    <ul class=" flex flex-col justify-between">
+                        <li class="p-6 px-6 text-3xl md:flex justify-between hover:bg-[#d5d8dc]">
+                            <p class="mb-4 md:mb-0">Price: 0$</p>
+                        </li>
+                        <hr class="border-black border rounded2xl">
+                        <li class="p-6 px-6 text-3xl md:flex justify-between hover:bg-[#d5d8dc]">
+                            <p class="mb-4 md:mb-0">Number of people: 2 people</p>
+                        </li>
+                        <hr class="border-black border rounded2xl">
+                        <li class="p-6 px-6 text-3xl md:flex justify-between hover:bg-[#d5d8dc]">
+                            <p class="mb-4 md:mb-0">Type of service: Massage</p>
+                        </li>
+                        <hr class="border-black border rounded2xl">
+                        <li class="p-6 px-6 text-3xl md:flex justify-between hover:bg-[#d5d8dc]">
+                            <p class="mb-4 md:mb-0">Date: 21 / 12 / 2024</p>
+                        </li>
+
+
+
+                    </ul>
+                </div>
+                <div class=" md:flex justify-between mt-6 md:mx-20">
+                    <a href="./search.html">
+                        <p class="text-3xl font-bold text-center hover:underline">BACK</p>
+                    </a>
+                    <a href="./search.html">
+                        <p class="text-3xl font-bold text-center hover:underline">SEARCH</p>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="z-30">
+        <div class="w-full flex h-20 bg-primaryGreen text-center items-center justify-between pl-2 md:pl-8 pr-14">
+            <div class="flex items-center min-w-[38%] md:min-w-10 mr-20">
+                <img class="" src="Multimedia/logo.png" alt="BlissWay Logo" width="85">
+                <img class="" src="Multimedia/letras.svg" height="auto" alt="BlissWay title">
+                <form class="hidden md:flex ml-24">
+                    <textarea
+                        class=" w-[400px] mr-[100px] text-xl h-12 px-4 place-content-center rounded-xl border-2 border-black bg-background"
+                        style="resize:none;" name="search" id="search" placeholder="Search"></textarea>
+                </form>
+                <input class="hidden" type="submit" value="Search" />
+            </div>
+            <div class="flex">
+                <h1 class="hidden md:flex text-2xl ml-60 cursor-pointer tracking-wider "><span
+                        class="hover:underline">Profile</span></h1>
+                <img class="flex md:hidden ml-7" src="Multimedia/userLogo.png" width="50" alt="BlissWay title">
+            </div>
+
+        </div>
+        <nav class="h-14 bg-gold w-full text-center place-content-center text-2xl flex">
+            <div class="hidden md:flex w-[90%] justify-between flex-wrap">
+                <h1 class="place-content-center cursor-pointer">SPA</h1>
+                <h1 class="place-content-center cursor-pointer">MASSAGE</h1>
+                <h1 class="place-content-center cursor-pointer">THERMAL WATERS</h1>
+                <h1 class="place-content-center cursor-pointer">EXPERIENCES</h1>
+                <h1 class="place-content-center cursor-pointer">PACKS</h1>
+            </div>
+            <div class="items-center flex md:hidden">
+                <form class=" mx-4 flex w-full justify-self-start space-x-8">
+                    <textarea
+                        class="flex text-xl w-2/3 h-10 px-4 pt-1 place-content-center rounded-xl border-2 border-black bg-background"
+                        style="resize:none;" name="search" id="mobileSearch" placeholder="Search"></textarea>
+                    <input class="text-xl" type="submit" value="Search" />
+                    <script>
+                        const textarea = document.getElementById('mobileSearch');
+                        const textareaDeskt = document.getElementById('search')
+
+                        textarea.addEventListener('keydown', (event) => {
+                            if (event.key === 'Enter') {
+                                event.preventDefault();
+                                alert("Eres muy gay")
+                                form.submit()
+                            }
+                        });
+                        textareaDeskt.addEventListener('keydown', (event) => {
+                            if (event.key === 'Enter') {
+                                event.preventDefault();
+                                alert("Eres muy gay")
+                                form.submit()
+                            }
+                        });
+                    </script>
+
+                </form>
+            </div>
+        </nav>
+
+        <div class="place-content-center">
+            <a class="block md:hidden" href="filters.html">
+                <p class="text-lg mr-10 mt-6 text-right hover:underline">Filters</p>
+            </a>
+            <div class="flex justify-between">
+                <h1
+                    class="text-center md:text-left ml-auto mr-auto md:ml-40 2xl:ml-52 mt-2 md:mt-16 2xl:mb-12 text-6xl">
+                    Results
+                </h1>
+                <a class="hidden md:flex" href="filters.html">
+                    <p class="text-xl mr-20 mt-10 hover:underline">Filters</p>
+                </a>
+            </div>
+            <div class="grid mx-6 my-16 gap-20 justify-items-center">
+
+                <div class="grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 gap-16 md:gap-40">
+                    <!-- <a href="*"> -->
+                    <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full flex items-center justify-center bg-cover relative shadow-image"
+                        style="background-image: url('Multimedia/spa1.png');">
+                        <div
+                            class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
+                            <span class="text-xl font-bold text-black">-12%</span>
+                        </div>
+                    </div>
+                    <!-- </a> -->
+                    <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full flex items-center justify-center bg-cover relative shadow-image"
+                        style="background-image: url('Multimedia/spa2.png');">
+                        <div
+                            class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
+                            <span class="text-xl font-bold text-black">-10%</span>
+                        </div>
+                    </div>
+                    <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full flex items-center justify-center bg-cover relative shadow-image"
+                        style="background-image: url('Multimedia/spa5.png');">
+                        <div
+                            class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
+                            <span class="text-xl font-bold text-black">GIFT</span>
+                        </div>
+                    </div>
+                    <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full flex items-center justify-center bg-cover relative shadow-image"
+                        style="background-image: url('Multimedia/spa10.png');">
+                        <div
+                            class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
+                            <span class="text-xl font-bold text-black">-15%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3  gap-16 md:gap-60">
+                    <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full flex items-center justify-center bg-cover relative shadow-image"
+                        style="background-image: url('Multimedia/spa3.png');">
+                        <div
+                            class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
+                            <span class="text-xl font-bold text-black">-60%</span>
+                        </div>
+                    </div>
+                    <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full flex items-center justify-center bg-cover relative shadow-image"
+                        style="background-image: url('Multimedia/spa4.png');">
+                        <div
+                            class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
+                            <span class="text-xl font-bold text-black">-55%</span>
+                        </div>
+                    </div>
+                    <div class="hidden 2xl:flex w-[20rem] h-[20rem] border-black border-2 rounded-full bg-gold flex items-center justify-center bg-cover shadow-image relative"
+                        style="background-image: url('Multimedia/spa6.png');">
+                        <div
+                            class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
+                            <span class="text-xl font-bold text-black">-40%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:flex grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 gap-16 md:gap-40">
+                    <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full flex items-center justify-center bg-cover relative shadow-image"
+                        style="background-image: url('Multimedia/spa9.png');">
+                        <div
+                            class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
+                            <span class="text-xl font-bold text-black">-60%</span>
+                        </div>
+                    </div>
+                    <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full flex items-center justify-center bg-cover relative shadow-image"
+                        style="background-image: url('Multimedia/spa7.png');">
+                        <div
+                            class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
+                            <span class="text-xl font-bold text-black">-55%</span>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex w-[20rem] h-[20rem] border-black border-2 rounded-full bg-gold flex items-center justify-center bg-cover shadow-image relative"
+                        style="background-image: url('Multimedia/spa8.png');">
+                        <div
+                            class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
+                            <span class="text-xl font-bold text-black">-40%</span>
+                        </div>
+                    </div>
+                    <div class="hidden 2xl:flex w-[20rem] h-[20rem] border-black border-2 rounded-full bg-gold items-center justify-center bg-cover shadow-image relative"
+                        style="background-image: url('Multimedia/spa11.png');">
+                        <div
+                            class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
+                            <span class="text-xl font-bold text-black">-20%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer class="bg-primaryGreen shadow">
+            <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+                <div class="sm:flex sm:items-center sm:justify-between">
+                    <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0"
+                        class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                        <img src="Multimedia/logo.png" class="h-20" alt="Flowbite Logo" />
+                        <span
+                            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">BlissWay</span>
+                    </a>
+                    <ul
+                        class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400 text-nowrap">
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0"
+                                class="hover:underline me-4 md:me-6">About</a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0"
+                                class="hover:underline me-4 md:me-6">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0"
+                                class="hover:underline me-4 md:me-6">Licensing</a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" class="hover:underline">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+                <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a
+                        href="https://www.youtube.com/watch?v=xvFZjo5PgG0" class="hover:underline">BlissWay™</a>.
+                    All
+                    Rights
+                    Reserved.</span>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

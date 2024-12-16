@@ -37,8 +37,8 @@
 <body class="w-full bg-background font-waters h-screen">
     <div class="w-full flex h-20 bg-primaryGreen text-center items-center justify-between pl-2 md:pl-8 pr-14">
         <div class="flex items-center min-w-[38%] md:min-w-10 mr-20">
-            <img class="" src="Multimedia/logo.png" alt="BlissWay Logo" width="85">
-            <img class="" src="Multimedia/letras.svg" height="auto" alt="BlissWay title">
+            <a href="index.html"><img class="" src="Multimedia/logo.png" alt="BlissWay Logo" width="85"></a>
+            <a href="index.html"><img class="" src="Multimedia/letras.svg" height="auto" alt="BlissWay title"></a>
             <form class="hidden md:flex ml-24">
                 <textarea
                     class=" w-[400px] mr-[100px] text-xl h-12 px-4 place-content-center rounded-xl border-2 border-black bg-background"
@@ -47,19 +47,30 @@
             <input class="hidden" type="submit" value="Search" />
         </div>
         <div class="flex">
-            <h1 class="hidden md:flex text-2xl ml-60 cursor-pointer tracking-wider "><span class="hover:underline">Sign
-                    In</span> / <span class="hover:underline">Register</span></h1>
+            <h1 class="hidden md:flex text-2xl ml-60 cursor-pointer tracking-wider "><a href="signIn.html"><span
+                        class="hover:underline">Sign
+                        In</span></a> / <a href="register.html"><span class="hover:underline">Register</span></a></h1>
             <img class="flex md:hidden ml-7" src="Multimedia/userLogo.png" width="50" alt="BlissWay title">
         </div>
 
     </div>
     <nav class="h-14 bg-gold w-full text-center place-content-center text-2xl flex">
-        <div class="hidden md:flex w-[90%] justify-between flex-wrap">
-            <h1 class="place-content-center cursor-pointer">SPA</h1>
-            <h1 class="place-content-center cursor-pointer">MASSAGE</h1>
-            <h1 class="place-content-center cursor-pointer">THERMAL WATERS</h1>
-            <h1 class="place-content-center cursor-pointer">EXPERIENCES</h1>
-            <h1 class="place-content-center cursor-pointer">PACKS</h1>
+        <div class="hidden md:flex w-[90%] justify-between flex-wrap place-content-center">
+            <a href="search.html?title=Spa">
+                <h1 class="place-content-center cursor-pointer">SPA</h1>
+            </a>
+            <a href="search.html?title=Massage">
+                <h1 class="place-content-center cursor-pointer">MASSAGE</h1>
+            </a>
+            <a href="search.html?title=Thermal%20Waters">
+                <h1 class="place-content-center cursor-pointer">THERMAL WATERS</h1>
+            </a>
+            <a href="search.html?title=Experiences">
+                <h1 class="place-content-center cursor-pointer">EXPERIENCES</h1>
+            </a>
+            <a href="search.html?title=Packs">
+                <h1 class="place-content-center cursor-pointer">PACKS</h1>
+            </a>
         </div>
         <div class="items-center flex md:hidden">
             <form class=" mx-4 flex w-full justify-self-start space-x-8">
@@ -68,60 +79,83 @@
                     style="resize:none;" name="search" id="mobileSearch" placeholder="Search"></textarea>
                 <input class="text-xl" type="submit" value="Search" />
                 <script>
-                    const textarea = document.getElementById('mobileSearch');
-                    const textareaDeskt = document.getElementById('search')
+                    const textareaMobile = document.getElementById('mobileSearch');
+                    const textareaDesktop = document.getElementById('search');
 
-                    textarea.addEventListener('keydown', (event) => {
+                    const redirectToSearch = (event) => {
                         if (event.key === 'Enter') {
                             event.preventDefault();
-                            alert("Eres muy gay")
-                            form.submit()
+
+                            const query = event.target.value;
+                            if (query) {
+                                window.location.href = `search.html?title=${encodeURIComponent(query)}`;
+                            } else {
+                                alert("Por favor, escribe algo para buscar.");
+                            }
                         }
-                    });
-                    textareaDeskt.addEventListener('keydown', (event) => {
-                        if (event.key === 'Enter') {
-                            event.preventDefault();
-                            alert("Eres muy gay")
-                            form.submit()
-                        }
-                    });
+                    };
+
+                    textareaMobile.addEventListener('keydown', redirectToSearch);
+                    textareaDesktop.addEventListener('keydown', redirectToSearch);
                 </script>
+
 
             </form>
         </div>
     </nav>
     <div class="flex md:hidden justify-center">
         <div class="grid mx-6 mt-6 grid-rows-[auto,1fr,auto] gap-4">
-            <div
-                class="w-[6rem] h-[6rem] ml-[6rem] border-black border-2 text-center rounded-full bg-gold p-4 flex items-center justify-center">
-                SPA </div>
+            <a href="search.html?title=SPA" class="transform transition-transform duration-300 hover:scale-110">
+                <div
+                    class="w-[6rem] h-[6rem] ml-[6rem] border-black border-2 text-center rounded-full bg-gold p-4 flex items-center justify-center">
+                    SPA
+                </div>
+            </a>
             <div class="grid grid-cols-3 gap-4 justify-items-center">
-                <div
-                    class="w-[6rem] h-[6rem] border-black border-2 bg-gold p-4 rounded-full flex items-center justify-center">
-                    MASSAGE </div>
-                <div
-                    class="w-[6rem] h-[6rem] border-black border-2 bg-gold p-4 rounded-full flex items-center justify-center">
-                    THERMAL </div>
-                <div
-                    class="w-[6rem] h-[6rem] border-black border-2 bg-gold p-4 rounded-full flex items-center justify-center">
-                    SURPRISE </div>
+                <a href="search.html?title=MASSAGE" class="transform transition-transform duration-300 hover:scale-110">
+                    <div
+                        class="w-[6rem] h-[6rem] border-black border-2 bg-gold p-4 rounded-full flex items-center justify-center">
+                        MASSAGE
+                    </div>
+                </a>
+                <a href="search.html?title=THERMAL" class="transform transition-transform duration-300 hover:scale-110">
+                    <div
+                        class="w-[6rem] h-[6rem] border-black border-2 bg-gold p-4 rounded-full flex items-center justify-center">
+                        THERMAL
+                    </div>
+                </a>
+                <a href="search.html?title=SURPRISE"
+                    class="transform transition-transform duration-300 hover:scale-110">
+                    <div
+                        class="w-[6rem] h-[6rem] border-black border-2 bg-gold p-4 rounded-full flex items-center justify-center">
+                        SURPRISE
+                    </div>
+                </a>
             </div>
             <div class="grid grid-cols-2 gap-4 justify-items-center">
-                <div
-                    class="w-[6rem] h-[6rem] border-black border-2 bg-gold p-4 rounded-full flex items-center justify-center text-xs">
-                    EXPERIENCES </div>
-                <div
-                    class="w-[6rem] h-[6rem] border-black border-2 bg-gold p-4 rounded-full flex items-center justify-center">
-                    PACKS </div>
+                <a href="search.html?title=EXPERIENCES"
+                    class="transform transition-transform duration-300 hover:scale-110">
+                    <div
+                        class="w-[6rem] h-[6rem] border-black border-2 bg-gold p-4 rounded-full flex items-center justify-center text-xs">
+                        EXPERIENCES
+                    </div>
+                </a>
+                <a href="search.html?title=PACKS" class="transform transition-transform duration-300 hover:scale-110">
+                    <div
+                        class="w-[6rem] h-[6rem] border-black border-2 bg-gold p-4 rounded-full flex items-center justify-center">
+                        PACKS
+                    </div>
+                </a>
             </div>
         </div>
     </div>
+
     <div class="place-content-center">
         <div class="grid mx-6 my-16 gap-20 justify-items-center">
 
             <div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-16 md:gap-60 mr-0 md:mr-60">
                 <!-- <a href="*"> -->
-                <div class="w-[20rem] h-[20rem] border-black border-2 rounded-full flex items-center justify-center bg-cover relative shadow-image"
+                <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full flex items-center justify-center bg-cover relative shadow-image"
                     style="background-image: url('Multimedia/spa1.png');">
                     <div
                         class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
@@ -129,14 +163,14 @@
                     </div>
                 </div>
                 <!-- </a> -->
-                <div class="w-[20rem] h-[20rem] border-black border-2 rounded-full bg-gold flex items-center justify-center bg-cover relative shadow-image"
+                <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full bg-gold flex items-center justify-center bg-cover relative shadow-image"
                     style="background-image: url('Multimedia/spa2.png');">
                     <div
                         class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
                         <span class="text-xl font-bold text-black">-35%</span>
                     </div>
                 </div>
-                <div class="hidden 2xl:flex w-[20rem] h-[20rem] border-black border-2 rounded-full bg-gold items-center justify-center bg-cover  relative shadow-image"
+                <div class="hidden 2xl:flex w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full bg-gold items-center justify-center bg-cover  relative shadow-image"
                     style="background-image: url('Multimedia/spa5.png');">
                     <div
                         class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
@@ -146,21 +180,21 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3  gap-16 md:gap-60 ml-0 md:ml-60">
-                <div class="w-[20rem] h-[20rem] border-black border-2 rounded-full bg-gold flex items-center justify-center bg-cover shadow relative shadow-image"
+                <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full bg-gold flex items-center justify-center bg-cover shadow relative shadow-image"
                     style="background-image: url('Multimedia/spa3.png');">
                     <div
                         class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] ">
                         <span class="text-xl font-bold text-black">-60%</span>
                     </div>
                 </div>
-                <div class="w-[20rem] h-[20rem] border-black border-2 rounded-full bg-gold flex items-center justify-center bg-cover shadow relative"
+                <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full bg-gold flex items-center justify-center bg-cover shadow relative"
                     style="background-image: url('Multimedia/spa4.png');">
                     <div
                         class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem]  shadow-image">
                         <span class="text-xl font-bold text-black">-55%</span>
                     </div>
                 </div>
-                <div class="hidden 2xl:flex w-[20rem] h-[20rem] border-black border-2 rounded-full bg-gold flex items-center justify-center bg-cover shadow-image relative"
+                <div class="hidden 2xl:flex w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full bg-gold flex items-center justify-center bg-cover shadow-image relative"
                     style="background-image: url('Multimedia/spa6.png');">
                     <div
                         class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">

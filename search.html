@@ -49,7 +49,8 @@
         <div class="flex">
             <h1 class="hidden md:flex text-2xl ml-60 cursor-pointer tracking-wider "><span
                     class="hover:underline">Profile</span></h1>
-            <img class="flex md:hidden ml-7" src="Multimedia/userLogo.png" width="50" alt="BlissWay title">
+            <a href="profile.html"><img class="flex md:hidden ml-7" src="Multimedia/userLogo.png" width="50"
+                    alt="BlissWay title"></a>
         </div>
 
     </div>
@@ -92,12 +93,33 @@
     </nav>
 
     <div class="place-content-center">
-        <h1 class="text-center md:text-left ml-0 md:ml-40 2xl:ml-52 my-16 2xl:mb-20 text-6xl">Results</h1>
+        <a class="block md:hidden" href="filters.html">
+            <p class="text-lg mr-10 mt-6 text-right hover:underline">Filters</p>
+        </a>
+        <div class="flex justify-between">
+            <h1 id="title"
+                class="text-center md:text-left ml-auto mr-auto md:ml-40 2xl:ml-52 mt-8 md:mt-16 2xl:mb-4 text-4xl md:text-6xl">
+                Results
+            </h1>
+            <script>
+                const params = new URLSearchParams(window.location.search);
+                const title = params.get('title');
+
+                if (title) {
+                    document.getElementById('title').textContent = title;
+                } else {
+                    document.getElementById('title').textContent = 'Search';
+                }
+            </script>
+            <a class="hidden md:flex" href="filters.html">
+                <p class="text-xl mr-20 mt-10 hover:underline">Filters</p>
+            </a>
+        </div>
         <div class="grid mx-6 my-16 gap-20 justify-items-center">
 
             <div class="grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 gap-16 md:gap-40">
                 <!-- <a href="*"> -->
-                <div class="w-[20rem] h-[20rem] border-black border-2 rounded-full flex items-center justify-center bg-cover relative shadow-image"
+                <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full flex items-center justify-center bg-cover relative shadow-image"
                     style="background-image: url('Multimedia/spa1.png');">
                     <div
                         class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
@@ -105,21 +127,21 @@
                     </div>
                 </div>
                 <!-- </a> -->
-                <div class="w-[20rem] h-[20rem] border-black border-2 rounded-full bg-gold flex items-center justify-center bg-cover  relative shadow-image"
+                <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full flex items-center justify-center bg-cover relative shadow-image"
                     style="background-image: url('Multimedia/spa2.png');">
                     <div
                         class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
                         <span class="text-xl font-bold text-black">-10%</span>
                     </div>
                 </div>
-                <div class="hidden md:flex w-[20rem] h-[20rem] border-black border-2 rounded-full bg-gold items-center justify-center bg-cover shadow-image relative"
+                <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full flex items-center justify-center bg-cover relative shadow-image"
                     style="background-image: url('Multimedia/spa5.png');">
                     <div
                         class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
                         <span class="text-xl font-bold text-black">GIFT</span>
                     </div>
                 </div>
-                <div class="hidden 2xl:flex w-[20rem] h-[20rem] border-black border-2 rounded-full bg-gold items-center justify-center bg-cover shadow-image relative"
+                <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full flex items-center justify-center bg-cover relative shadow-image"
                     style="background-image: url('Multimedia/spa10.png');">
                     <div
                         class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
@@ -129,14 +151,14 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3  gap-16 md:gap-60">
-                <div class="w-[20rem] h-[20rem] border-black border-2 rounded-full bg-gold flex items-center justify-center bg-cover shadow-image relative"
+                <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full flex items-center justify-center bg-cover relative shadow-image"
                     style="background-image: url('Multimedia/spa3.png');">
                     <div
                         class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
                         <span class="text-xl font-bold text-black">-60%</span>
                     </div>
                 </div>
-                <div class="w-[20rem] h-[20rem] border-black border-2 rounded-full bg-gold flex items-center justify-center bg-cover shadow-image relative"
+                <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full flex items-center justify-center bg-cover relative shadow-image"
                     style="background-image: url('Multimedia/spa4.png');">
                     <div
                         class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
@@ -152,14 +174,14 @@
                 </div>
             </div>
             <div class="hidden md:flex grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 gap-16 md:gap-40">
-                <div class="w-[20rem] h-[20rem] border-black border-2 rounded-full bg-gold flex items-center justify-center bg-cover shadow-image relative"
+                <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full flex items-center justify-center bg-cover relative shadow-image"
                     style="background-image: url('Multimedia/spa9.png');">
                     <div
                         class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
                         <span class="text-xl font-bold text-black">-60%</span>
                     </div>
                 </div>
-                <div class="w-[20rem] h-[20rem] border-black border-2 rounded-full bg-gold flex items-center justify-center bg-cover shadow-image relative"
+                <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full flex items-center justify-center bg-cover relative shadow-image"
                     style="background-image: url('Multimedia/spa7.png');">
                     <div
                         class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
