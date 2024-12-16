@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="Multimedia/logo.png">
     <title>BlissWay</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,8 +16,8 @@
                     primaryGreen: '#6E907F',
                     softGreen: '#A8BCB2',
                     background: '#E3E8E5',
-                    gold: '#C8AD8B'
-
+                    gold: '#C8AD8B',
+                    transparent: ''
                 },
                 fontFamily: {
                     waters: 'Lexend Deca'
@@ -26,7 +25,8 @@
                 boxShadow: {
                     form: '11px 10px 3px 11px rgba(0, 0, 0, 0.44)',
                     formMobile: '11px 10px 3px 1px rgba(0, 0, 0, 0.44)',
-                    image: '3px 7px 4px 3px rgba(0, 0, 0, 0.25);'
+                    image: '3px 7px 4px 3px rgba(0, 0, 0, 0.25);',
+                    text: '3px 7px 7px 0px rgba(0, 0, 0, 0.25);'
                 }
             }
 
@@ -34,7 +34,7 @@
     </script>
 </head>
 
-<body class="w-full bg-background font-waters h-screen">
+<body class="bg-background font-waters">
     <div class="w-full flex h-20 bg-primaryGreen text-center items-center justify-between pl-2 md:pl-8 pr-14">
         <div class="flex items-center min-w-[38%] md:min-w-10 mr-20">
             <img class="" src="Multimedia/logo.png" alt="BlissWay Logo" width="85">
@@ -45,11 +45,6 @@
                     style="resize:none;" name="search" id="search" placeholder="Search"></textarea>
             </form>
             <input class="hidden" type="submit" value="Search" />
-        </div>
-        <div class="flex">
-            <h1 class="hidden md:flex text-2xl ml-60 cursor-pointer tracking-wider "><span
-                    class="hover:underline">Profile</span></h1>
-            <img class="flex md:hidden ml-7" src="Multimedia/userLogo.png" width="50" alt="BlissWay title">
         </div>
 
     </div>
@@ -90,70 +85,71 @@
             </form>
         </div>
     </nav>
-    <div class="md:flex">
-        <div class="place-content-center justify-items-center md:w-[55%] md:max-w-[55%] my-12 md:my-16">
-            <div class="w-[85%] h-[200px] md:h-[400px] 2xl:h-[480px] shadow-image border-black border-[4px] md:ml-[88px] bg-cover bg-center"
-                style="background-image: url('Multimedia/spa3.png');">
 
+    <div class="mb-16 md:mb-28 w-full">
+        <h1 class="w-[60%] justify-self-center text-4xl font-bold text-black text-center md:text-left my-12">PROFILE
+        </h1>
+        <div
+            class="justify-self-center w-[88%] md:w-[60%]  shadow-image p-8 border-4 border-black bg-softGreen flex flex-col rounded-2xl">
+            <div class="md:flex">
+                <img src="Multimedia/profilePic.JPG" alt="Imagen fija"
+                    class="place-self-center md:place-self-left md:ml-4 mt-6 w-[160px] h-[200px] object-cover rounded-2xl border-4">
+                <div>
+                    <div class="md:ml-8 mt-6 md:flex mb-2">
+                        <h1 class="text-2xl font-bold mr-2">Name: </h1>
+                        <textarea class="text-xl md:text-2xl border-none bg-[transparent] resize-none outline-none"
+                            rows="1">Victor Gonzalez</textarea>
+                    </div>
+                    <div class="md:ml-8 mt-6 md:flex mb-2">
+                        <h1 class="text-2xl font-bold mr-2">Username: </h1>
+                        <textarea class="text-xl md:text-2xl border-none bg-[transparent] resize-none outline-none"
+                            rows="1">VictorElMasGuapo6969</textarea>
+                    </div>
+                    <div class="md:ml-8 mt-6 md:flex mb-2">
+                        <h1 class="text-2xl font-bold mr-2">Email: </h1>
+                        <textarea
+                            class="text-xl md:text-2xl border-none bg-[transparent] md:w-[500px] resize-none outline-none"
+                            rows="1">megustamuchoprogramar@stnicolau.com</textarea>
+                    </div>
+                    <div class="md:ml-8 mt-6 md:flex mb-2">
+                        <h1 class="text-2xl font-bold mr-2">Address: </h1>
+                        <textarea class="text-xl md:text-2xl border-none bg-[transparent] resize-none outline-none"
+                            rows="1">Calle De Loz Dioze, Salamanca, España</textarea>
+                    </div>
+                </div>
             </div>
-            <div class="ml-0 md:ml-24 mt-8 md:my-12 2xl:mb-20 w-[80%] md:w-[83%] text-justify">
-                <h1 class="text-center mb-6 md:text-left text-5xl">Six Harmonies Spa</h1>
-                <p class="my-4 text-md">Step into a world of tranquility and luxury at Six Harmonies Spa, where
-                    every
-                    visit
-                    is an
-                    invitation to
-                    unwind and rejuvenate. Our expertly designed treatments are tailored to your unique needs, blending
-                    soothing
-                    massages, revitalizing facials, and indulgent body therapies to leave you feeling refreshed and
-                    renewed.
-                    Whether you’re looking to escape the daily stress or treat yourself to some well-deserved pampering,
-                    Six
-                    Harmonies Spa offers a serene environment for the ultimate wellness experience. Book your
-                    appointment
-                    today
-                    and immerse yourself in pure relaxation at Six Harmonies Spa!</p>
-            </div>
 
+            <div>
 
-        </div>
-        <div class="md:max-w-[45%] md:w-[45%] mb-16 md:my-16 justify-items-center">
-            <div
-                class="border-4 bg-softGreen rounded-xl w-[80%] md:w-[70%] h-auto md:h-[700px] shadow-formMobile md:shadow-form">
-                <h1 class="w-full text-center mt-10 text-2xl font-bold md:text-4xl">PRICES</h1>
-                <ul class="m-8 flex flex-col h-[calc(100%-146px)] justify-between">
-                    <a href="resrevar.html">
-                        <li class="p-6 text-2xl md:flex justify-between rounded-xl hover:bg-primaryGreen">
-                            <p class="mb-4 md:mb-0">Aromatherapy Massage</p>
-                            <p class="justify-self-end">80$</p>
-                        </li>
+                <div class="mt-8 ml-6">
+                    <a href="./paySubscription.html" class="hover:underline ">
+                        <p class="text-2xl ">Payment Methods</p>
                     </a>
-                    <hr class="border-black border-2 rounded2xl">
-                    <a href="resrevar.html">
-                        <li class="p-6 text-2xl md:flex justify-between rounded-xl hover:bg-primaryGreen">
-                            <p class="mb-4 md:mb-0">Hydrating Facial</p>
-                            <p class="justify-self-end">120$</p>
-                        </li>
+                </div>
+                <div class="mt-8 ml-6">
+                    <a href="./paySubscription.html" class="hover:underline ">
+                        <p class="text-2xl ">Change Password</p>
                     </a>
-                    <hr class="border-black border-2 rounded2xl">
-                    <a href="resrevar.html">
-                        <li class="p-6 text-2xl md:flex justify-between rounded-xl hover:bg-primaryGreen">
-                            <p class="mb-4 md:mb-0">Hot Stone Therapy</p>
-                            <p class="justify-self-end">90$</p>
-                        </li>
+                </div>
+                <div class="mt-8 ml-6">
+                    <a href="./paySubscription.html" class="hover:underline ">
+                        <p class="text-2xl ">Reservations Made</p>
                     </a>
-                    <hr class="border-black border-2 rounded2xl">
-                    <a href="resrevar.html">
-                        <li class="p-6 text-2xl md:flex justify-between rounded-xl hover:bg-primaryGreen">
-                            <p class="mb-4 md:mb-0">Hot Stone Therapy</p>
-                            <p class="justify-self-end">90$</p>
-                        </li>
+                </div>
+                <div class="mt-8 ml-6">
+                    <a href="./paySubscription.html" class="hover:underline ">
+                        <p class="text-2xl ">Preferred Sites</p>
                     </a>
-
-                </ul>
+                </div>
+                <div class="mt-8 mr-6">
+                    <a href="./adminPanel.html" class="hover:underline ">
+                        <p class="text-2xl text-right">Admin Panel</p>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
+
     <footer class="bg-primaryGreen shadow">
         <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
             <div class="sm:flex sm:items-center sm:justify-between">
