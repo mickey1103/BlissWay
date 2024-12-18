@@ -46,6 +46,7 @@
             <input class="hidden" type="submit" value="Search" />
         </div>
 
+
     </div>
     <nav class="h-14 bg-gold w-full text-center place-content-center text-2xl flex">
         <div class="hidden md:flex w-[90%] justify-between flex-wrap place-content-center">
@@ -66,34 +67,44 @@
             </a>
         </div>
         <div class="items-center flex md:hidden">
-            <form class=" mx-4 flex w-full justify-self-start space-x-8">
+            <form class="mx-4 flex w-full justify-self-start space-x-8">
                 <textarea
                     class="flex text-xl w-2/3 h-10 px-4 pt-1 place-content-center rounded-xl border-2 border-black bg-background"
                     style="resize:none;" name="search" id="mobileSearch" placeholder="Search"></textarea>
-                <input class="text-xl" type="submit" value="Search" />
-                <script>
-                    const textareaMobile = document.getElementById('mobileSearch');
-                    const textareaDesktop = document.getElementById('search');
-
-                    const redirectToSearch = (event) => {
-                        if (event.key === 'Enter') {
-                            event.preventDefault();
-
-                            const query = event.target.value;
-                            if (query) {
-                                window.location.href = `search.html?title=${encodeURIComponent(query)}`;
-                            } else {
-                                alert("Por favor, escribe algo para buscar.");
-                            }
-                        }
-                    };
-
-                    textareaMobile.addEventListener('keydown', redirectToSearch);
-                    textareaDesktop.addEventListener('keydown', redirectToSearch);
-                </script>
-
-
+                <input id="btn" class="text-xl" type="button" value="Search" />
             </form>
+
+            <script>
+                const textareaMobile = document.getElementById('mobileSearch');
+                const textareaDesktop = document.getElementById('search');
+                const mobileSearchBtn = document.getElementById('btn');
+
+                const redirectToSearch = (event) => {
+                    if (event.key === 'Enter') {
+                        event.preventDefault();
+
+                        const query = event.target.value;
+                        if (query) {
+                            window.location.href = `search.html?title=${encodeURIComponent(query)}`;
+                        } else {
+                            window.location.href = `search.html?title=Results`;
+                        }
+                    }
+                };
+
+                const redirectToSearchOnClick = () => {
+                    const query = textareaMobile.value;
+                    if (query) {
+                        window.location.href = `search.html?title=${encodeURIComponent(query)}`;
+                    } else {
+                        window.location.href = `search.html?title=Results`;
+                    }
+                };
+                textareaMobile.addEventListener('keydown', redirectToSearch);
+                if (textareaDesktop) textareaDesktop.addEventListener('keydown', redirectToSearch);
+                mobileSearchBtn.addEventListener('click', redirectToSearchOnClick);
+            </script>
+
         </div>
     </nav>
     <div class="flex justify-center items-center mt-12 md:mt-24 mb-16 md:mb-28">

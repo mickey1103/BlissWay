@@ -6,8 +6,8 @@
     <link rel="shortcut icon" href="../Multimedia/logo.png">
     <title>BlissWay</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="../https://fonts.googleapis.com">
+    <link rel="preconnect" href="../https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -37,8 +37,8 @@
 <body class="w-full bg-background font-waters h-screen">
     <div class="w-full flex h-20 bg-primaryGreen text-center items-center justify-between pl-2 md:pl-8 pr-14">
         <div class="flex items-center min-w-[38%] md:min-w-10 mr-20">
-            <img class="" src="../Multimedia/logo.png" alt="BlissWay Logo" width="85">
-            <img class="" src="../Multimedia/letras.svg" height="auto" alt="BlissWay title">
+            <a href="../index.html"><img class="" src="../Multimedia/logo.png" alt="BlissWay Logo" width="85"></a>
+            <a href="../index.html"><img class="" src="../Multimedia/letras.svg" height="auto" alt="BlissWay title"></a>
             <form class="hidden md:flex ml-24">
                 <textarea
                     class=" w-[400px] mr-[100px] text-xl h-12 px-4 place-content-center rounded-xl border-2 border-black bg-background"
@@ -47,47 +47,70 @@
             <input class="hidden" type="submit" value="Search" />
         </div>
         <div class="flex">
-            <h1 class="hidden md:flex text-2xl ml-60 cursor-pointer tracking-wider "><span
-                    class="hover:underline">Profile</span></h1>
-            <img class="flex md:hidden ml-7" src="../Multimedia/userLogo.png" width="50" alt="BlissWay title">
+            <h1 class="hidden md:flex text-2xl ml-60 cursor-pointer tracking-wider "><a href="../profile.html"><span
+                        class="hover:underline">Profile</a></h1>
+            <a href="../signIn.html"> <img class="flex md:hidden ml-7" src="../Multimedia/userLogo.png" width="50"
+                    alt="BlissWay title"></a>
         </div>
 
     </div>
     <nav class="h-14 bg-gold w-full text-center place-content-center text-2xl flex">
-        <div class="hidden md:flex w-[90%] justify-between flex-wrap">
-            <h1 class="place-content-center cursor-pointer">SPA</h1>
-            <h1 class="place-content-center cursor-pointer">MASSAGE</h1>
-            <h1 class="place-content-center cursor-pointer">THERMAL WATERS</h1>
-            <h1 class="place-content-center cursor-pointer">EXPERIENCES</h1>
-            <h1 class="place-content-center cursor-pointer">PACKS</h1>
+        <div class="hidden md:flex w-[90%] justify-between flex-wrap place-content-center">
+            <a href="../search.html?title=Spa">
+                <h1 class="place-content-center cursor-pointer">SPA</h1>
+            </a>
+            <a href="../search.html?title=Massage">
+                <h1 class="place-content-center cursor-pointer">MASSAGE</h1>
+            </a>
+            <a href="../search.html?title=Thermal%20Waters">
+                <h1 class="place-content-center cursor-pointer">THERMAL WATERS</h1>
+            </a>
+            <a href="../search.html?title=Experiences">
+                <h1 class="place-content-center cursor-pointer">EXPERIENCES</h1>
+            </a>
+            <a href="../search.html?title=Packs">
+                <h1 class="place-content-center cursor-pointer">PACKS</h1>
+            </a>
         </div>
         <div class="items-center flex md:hidden">
-            <form class=" mx-4 flex w-full justify-self-start space-x-8">
+            <form class="mx-4 flex w-full justify-self-start space-x-8">
                 <textarea
                     class="flex text-xl w-2/3 h-10 px-4 pt-1 place-content-center rounded-xl border-2 border-black bg-background"
                     style="resize:none;" name="search" id="mobileSearch" placeholder="Search"></textarea>
-                <input class="text-xl" type="submit" value="Search" />
-                <script>
-                    const textarea = document.getElementById('mobileSearch');
-                    const textareaDeskt = document.getElementById('search')
-
-                    textarea.addEventListener('keydown', (event) => {
-                        if (event.key === 'Enter') {
-                            event.preventDefault();
-                            alert("Eres muy gay")
-                            form.submit()
-                        }
-                    });
-                    textareaDeskt.addEventListener('keydown', (event) => {
-                        if (event.key === 'Enter') {
-                            event.preventDefault();
-                            alert("Eres muy gay")
-                            form.submit()
-                        }
-                    });
-                </script>
-
+                <input id="btn" class="text-xl" type="button" value="Search" />
             </form>
+
+            <script>
+                const textareaMobile = document.getElementById('mobileSearch');
+                const textareaDesktop = document.getElementById('search');
+                const mobileSearchBtn = document.getElementById('btn');
+
+                const redirectToSearch = (event) => {
+                    if (event.key === 'Enter') {
+                        event.preventDefault();
+
+                        const query = event.target.value;
+                        if (query) {
+                            window.location.href = `search.html?title=${encodeURIComponent(query)}`;
+                        } else {
+                            window.location.href = `search.html?title=Results`;
+                        }
+                    }
+                };
+
+                const redirectToSearchOnClick = () => {
+                    const query = textareaMobile.value;
+                    if (query) {
+                        window.location.href = `search.html?title=${encodeURIComponent(query)}`;
+                    } else {
+                        window.location.href = `search.html?title=Results`;
+                    }
+                };
+                textareaMobile.addEventListener('keydown', redirectToSearch);
+                if (textareaDesktop) textareaDesktop.addEventListener('keydown', redirectToSearch);
+                mobileSearchBtn.addEventListener('click', redirectToSearchOnClick);
+            </script>
+
         </div>
     </nav>
     <div class="md:flex">
@@ -98,10 +121,13 @@
             </div>
             <div class="ml-0 md:ml-24 mt-8 md:my-12 2xl:mb-20 w-[80%] md:w-[83%] text-justify">
                 <h1 class="text-center mb-6 md:text-left text-5xl">Celestial Glow Spa</h1>
-                <p class="my-4 text-md">Step into the celestial embrace of peace at Celestial Glow Spa, where your wellness journey begins under an atmosphere
-                of starry calm. Our signature treatments, from luxurious aromatherapy massages to rejuvenating crystal-infused facials,
-                are designed to illuminate your inner glow. Perfect for individuals or couples seeking a holistic escape, our spa
-                promises a celestial experience that soothes the soul and replenishes the body.</p>
+                <p class="my-4 text-md">Step into the celestial embrace of peace at Celestial Glow Spa, where your
+                    wellness journey begins under an atmosphere
+                    of starry calm. Our signature treatments, from luxurious aromatherapy massages to rejuvenating
+                    crystal-infused facials,
+                    are designed to illuminate your inner glow. Perfect for individuals or couples seeking a holistic
+                    escape, our spa
+                    promises a celestial experience that soothes the soul and replenishes the body.</p>
             </div>
 
 
@@ -111,25 +137,33 @@
                 class="border-4 bg-softGreen rounded-xl w-[80%] md:w-[70%] h-auto md:h-[700px] shadow-formMobile md:shadow-form">
                 <h1 class="w-full text-center mt-10 text-2xl font-bold md:text-4xl">PRICES</h1>
                 <ul class="m-8 flex flex-col h-[calc(100%-146px)] justify-between">
-                    <li class="p-6 text-2xl md:flex justify-between rounded-xl hover:bg-primaryGreen">
-                        <p class="mb-4 md:mb-0">Aromatherapy Massage</p>
-                        <p class="justify-self-end">80$</p>
-                    </li>
+                    <a href="../resrevar.html">
+                        <li class="p-6 text-2xl md:flex justify-between rounded-xl hover:bg-primaryGreen">
+                            <p class="mb-4 md:mb-0">Aromatherapy Massage</p>
+                            <p class="justify-self-end">80$</p>
+                        </li>
+                    </a>
                     <hr class="border-black border-2 rounded2xl">
-                    <li class="p-6 text-2xl md:flex justify-between rounded-xl hover:bg-primaryGreen">
-                        <p class="mb-4 md:mb-0">Heavenly Aromatherapy Massage</p>
-                        <p class="justify-self-end">110$</p>
-                    </li>
+                    <a href="../resrevar.html">
+                        <li class="p-6 text-2xl md:flex justify-between rounded-xl hover:bg-primaryGreen">
+                            <p class="mb-4 md:mb-0">Hydrating Facial</p>
+                            <p class="justify-self-end">120$</p>
+                        </li>
+                    </a>
                     <hr class="border-black border-2 rounded2xl">
-                    <li class="p-6 text-2xl md:flex justify-between rounded-xl hover:bg-primaryGreen">
-                        <p class="mb-4 md:mb-0">Starry Night Body Wrap</p>
-                        <p class="justify-self-end">140$</p>
-                    </li>
+                    <a href="../resrevar.html">
+                        <li class="p-6 text-2xl md:flex justify-between rounded-xl hover:bg-primaryGreen">
+                            <p class="mb-4 md:mb-0">Hot Stone Therapy</p>
+                            <p class="justify-self-end">90$</p>
+                        </li>
+                    </a>
                     <hr class="border-black border-2 rounded2xl">
-                    <li class="p-6 text-2xl md:flex justify-between rounded-xl hover:bg-primaryGreen">
-                        <p class="mb-4 md:mb-0">Crystal Glow Facial</p>
-                        <p class="justify-self-end">100$</p>
-                    </li>
+                    <a href="../resrevar.html">
+                        <li class="p-6 text-2xl md:flex justify-between rounded-xl hover:bg-primaryGreen">
+                            <p class="mb-4 md:mb-0">Hot Stone Therapy</p>
+                            <p class="justify-self-end">90$</p>
+                        </li>
+                    </a>
 
                 </ul>
             </div>

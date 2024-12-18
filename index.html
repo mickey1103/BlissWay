@@ -50,7 +50,8 @@
             <h1 class="hidden md:flex text-2xl ml-60 cursor-pointer tracking-wider "><a href="signIn.html"><span
                         class="hover:underline">Sign
                         In</span></a> / <a href="register.html"><span class="hover:underline">Register</span></a></h1>
-            <img class="flex md:hidden ml-7" src="Multimedia/userLogo.png" width="50" alt="BlissWay title">
+            <a href="signIn.html"> <img class="flex md:hidden ml-7" src="Multimedia/userLogo.png" width="50"
+                    alt="BlissWay title"></a>
         </div>
 
     </div>
@@ -73,34 +74,44 @@
             </a>
         </div>
         <div class="items-center flex md:hidden">
-            <form class=" mx-4 flex w-full justify-self-start space-x-8">
+            <form class="mx-4 flex w-full justify-self-start space-x-8">
                 <textarea
                     class="flex text-xl w-2/3 h-10 px-4 pt-1 place-content-center rounded-xl border-2 border-black bg-background"
                     style="resize:none;" name="search" id="mobileSearch" placeholder="Search"></textarea>
-                <input class="text-xl" type="submit" value="Search" />
-                <script>
-                    const textareaMobile = document.getElementById('mobileSearch');
-                    const textareaDesktop = document.getElementById('search');
-
-                    const redirectToSearch = (event) => {
-                        if (event.key === 'Enter') {
-                            event.preventDefault();
-
-                            const query = event.target.value;
-                            if (query) {
-                                window.location.href = `search.html?title=${encodeURIComponent(query)}`;
-                            } else {
-                                alert("Por favor, escribe algo para buscar.");
-                            }
-                        }
-                    };
-
-                    textareaMobile.addEventListener('keydown', redirectToSearch);
-                    textareaDesktop.addEventListener('keydown', redirectToSearch);
-                </script>
-
-
+                <input id="btn" class="text-xl" type="button" value="Search" />
             </form>
+
+            <script>
+                const textareaMobile = document.getElementById('mobileSearch');
+                const textareaDesktop = document.getElementById('search');
+                const mobileSearchBtn = document.getElementById('btn');
+
+                const redirectToSearch = (event) => {
+                    if (event.key === 'Enter') {
+                        event.preventDefault();
+
+                        const query = event.target.value;
+                        if (query) {
+                            window.location.href = `search.html?title=${encodeURIComponent(query)}`;
+                        } else {
+                            window.location.href = `search.html?title=Results`;
+                        }
+                    }
+                };
+
+                const redirectToSearchOnClick = () => {
+                    const query = textareaMobile.value;
+                    if (query) {
+                        window.location.href = `search.html?title=${encodeURIComponent(query)}`;
+                    } else {
+                        window.location.href = `search.html?title=Results`;
+                    }
+                };
+                textareaMobile.addEventListener('keydown', redirectToSearch);
+                if (textareaDesktop) textareaDesktop.addEventListener('keydown', redirectToSearch);
+                mobileSearchBtn.addEventListener('click', redirectToSearchOnClick);
+            </script>
+
         </div>
     </nav>
     <div class="flex md:hidden justify-center">
@@ -154,53 +165,63 @@
         <div class="grid mx-6 my-16 gap-20 justify-items-center">
 
             <div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-16 md:gap-60 mr-0 md:mr-60">
-                <!-- <a href="*"> -->
-                <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full flex items-center justify-center bg-cover relative shadow-image"
-                    style="background-image: url('Multimedia/spa1.png');">
-                    <div
-                        class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
-                        <span class="text-xl font-bold text-black">-48%</span>
+                <a href="Spas/Spa1.html">
+                    <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full flex items-center justify-center bg-cover relative shadow-image"
+                        style="background-image: url('Multimedia/spa1.png');">
+                        <div
+                            class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
+                            <span class="text-xl font-bold text-black">-48%</span>
+                        </div>
                     </div>
-                </div>
-                <!-- </a> -->
-                <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full bg-gold flex items-center justify-center bg-cover relative shadow-image"
-                    style="background-image: url('Multimedia/spa2.png');">
-                    <div
-                        class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
-                        <span class="text-xl font-bold text-black">-35%</span>
+                </a>
+                <a href="Spas/Spa2.html">
+                    <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full bg-gold flex items-center justify-center bg-cover relative shadow-image"
+                        style="background-image: url('Multimedia/spa2.png');">
+                        <div
+                            class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
+                            <span class="text-xl font-bold text-black">-35%</span>
+                        </div>
                     </div>
-                </div>
-                <div class="hidden 2xl:flex w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full bg-gold items-center justify-center bg-cover  relative shadow-image"
-                    style="background-image: url('Multimedia/spa5.png');">
-                    <div
-                        class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
-                        <span class="text-xl font-bold text-black">-75%</span>
+                </a>
+                <a href="Spas/Spa5.html">
+                    <div class="hidden 2xl:flex w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full bg-gold items-center justify-center bg-cover  relative shadow-image"
+                        style="background-image: url('Multimedia/spa5.png');">
+                        <div
+                            class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
+                            <span class="text-xl font-bold text-black">-75%</span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3  gap-16 md:gap-60 ml-0 md:ml-60">
-                <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full bg-gold flex items-center justify-center bg-cover shadow relative shadow-image"
-                    style="background-image: url('Multimedia/spa3.png');">
-                    <div
-                        class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] ">
-                        <span class="text-xl font-bold text-black">-60%</span>
+                <a href="Spas/Spa3.html">
+                    <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full bg-gold flex items-center justify-center bg-cover shadow relative shadow-image"
+                        style="background-image: url('Multimedia/spa3.png');">
+                        <div
+                            class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] ">
+                            <span class="text-xl font-bold text-black">-60%</span>
+                        </div>
                     </div>
-                </div>
-                <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full bg-gold flex items-center justify-center bg-cover shadow relative"
-                    style="background-image: url('Multimedia/spa4.png');">
-                    <div
-                        class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem]  shadow-image">
-                        <span class="text-xl font-bold text-black">-55%</span>
+                </a>
+                <a href="Spas/Spa4.html">
+                    <div class="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full bg-gold flex items-center justify-center bg-cover shadow relative"
+                        style="background-image: url('Multimedia/spa4.png');">
+                        <div
+                            class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem]  shadow-image">
+                            <span class="text-xl font-bold text-black">-55%</span>
+                        </div>
                     </div>
-                </div>
-                <div class="hidden 2xl:flex w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full bg-gold flex items-center justify-center bg-cover shadow-image relative"
-                    style="background-image: url('Multimedia/spa6.png');">
-                    <div
-                        class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
-                        <span class="text-xl font-bold text-black">-40%</span>
+                </a>
+                <a href="Spas/Spa6.html">
+                    <div class="hidden 2xl:flex w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] border-black border-2 rounded-full bg-gold flex items-center justify-center bg-cover shadow-image relative"
+                        style="background-image: url('Multimedia/spa6.png');">
+                        <div
+                            class="w-[5rem] h-[5rem] bg-gold border-black border-2 rounded-full flex items-center justify-center absolute top-0 left-[-1rem] shadow">
+                            <span class="text-xl font-bold text-black">-40%</span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
 

@@ -36,8 +36,8 @@
 <body class="bg-background font-waters">
     <div class="w-full flex h-20 bg-primaryGreen text-center items-center justify-between pl-2 md:pl-8 pr-14">
         <div class="flex items-center min-w-[38%] md:min-w-10 mr-20">
-            <img class="" src="Multimedia/logo.png" alt="BlissWay Logo" width="85">
-            <img class="" src="Multimedia/letras.svg" height="auto" alt="BlissWay title">
+            <a href="index.html"><img class="" src="Multimedia/logo.png" alt="BlissWay Logo" width="85"></a>
+            <a href="index.html"><img class="" src="Multimedia/letras.svg" height="auto" alt="BlissWay title"></a>
             <form class="hidden md:flex ml-24">
                 <textarea
                     class=" w-[400px] mr-[100px] text-xl h-12 px-4 place-content-center rounded-xl border-2 border-black bg-background"
@@ -48,40 +48,62 @@
 
     </div>
     <nav class="h-14 bg-gold w-full text-center place-content-center text-2xl flex">
-        <div class="hidden md:flex w-[90%] justify-between flex-wrap">
-            <h1 class="place-content-center cursor-pointer">SPA</h1>
-            <h1 class="place-content-center cursor-pointer">MASSAGE</h1>
-            <h1 class="place-content-center cursor-pointer">THERMAL WATERS</h1>
-            <h1 class="place-content-center cursor-pointer">EXPERIENCES</h1>
-            <h1 class="place-content-center cursor-pointer">PACKS</h1>
+        <div class="hidden md:flex w-[90%] justify-between flex-wrap place-content-center">
+            <a href="search.html?title=Spa">
+                <h1 class="place-content-center cursor-pointer">SPA</h1>
+            </a>
+            <a href="search.html?title=Massage">
+                <h1 class="place-content-center cursor-pointer">MASSAGE</h1>
+            </a>
+            <a href="search.html?title=Thermal%20Waters">
+                <h1 class="place-content-center cursor-pointer">THERMAL WATERS</h1>
+            </a>
+            <a href="search.html?title=Experiences">
+                <h1 class="place-content-center cursor-pointer">EXPERIENCES</h1>
+            </a>
+            <a href="search.html?title=Packs">
+                <h1 class="place-content-center cursor-pointer">PACKS</h1>
+            </a>
         </div>
         <div class="items-center flex md:hidden">
-            <form class=" mx-4 flex w-full justify-self-start space-x-8">
+            <form class="mx-4 flex w-full justify-self-start space-x-8">
                 <textarea
                     class="flex text-xl w-2/3 h-10 px-4 pt-1 place-content-center rounded-xl border-2 border-black bg-background"
                     style="resize:none;" name="search" id="mobileSearch" placeholder="Search"></textarea>
-                <input class="text-xl" type="submit" value="Search" />
-                <script>
-                    const textarea = document.getElementById('mobileSearch');
-                    const textareaDeskt = document.getElementById('search')
-
-                    textarea.addEventListener('keydown', (event) => {
-                        if (event.key === 'Enter') {
-                            event.preventDefault();
-                            alert("Eres muy gay")
-                            form.submit()
-                        }
-                    });
-                    textareaDeskt.addEventListener('keydown', (event) => {
-                        if (event.key === 'Enter') {
-                            event.preventDefault();
-                            alert("Eres muy gay")
-                            form.submit()
-                        }
-                    });
-                </script>
-
+                <input id="btn" class="text-xl" type="button" value="Search" />
             </form>
+
+            <script>
+                const textareaMobile = document.getElementById('mobileSearch');
+                const textareaDesktop = document.getElementById('search');
+                const mobileSearchBtn = document.getElementById('btn');
+
+                const redirectToSearch = (event) => {
+                    if (event.key === 'Enter') {
+                        event.preventDefault();
+
+                        const query = event.target.value;
+                        if (query) {
+                            window.location.href = `search.html?title=${encodeURIComponent(query)}`;
+                        } else {
+                            window.location.href = `search.html?title=Results`;
+                        }
+                    }
+                };
+
+                const redirectToSearchOnClick = () => {
+                    const query = textareaMobile.value;
+                    if (query) {
+                        window.location.href = `search.html?title=${encodeURIComponent(query)}`;
+                    } else {
+                        window.location.href = `search.html?title=Results`;
+                    }
+                };
+                textareaMobile.addEventListener('keydown', redirectToSearch);
+                if (textareaDesktop) textareaDesktop.addEventListener('keydown', redirectToSearch);
+                mobileSearchBtn.addEventListener('click', redirectToSearchOnClick);
+            </script>
+
         </div>
     </nav>
 
